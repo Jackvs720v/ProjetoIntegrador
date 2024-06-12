@@ -481,7 +481,7 @@ main{
 }
 
 .footer .logo-text span {
-    color: var(--primary-color);
+    color: var(-);
 }
 
 .footer .footer-section p {
