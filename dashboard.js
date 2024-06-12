@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     var tempoOperacaoTexto = document.getElementById("operacaoTempo");
     var resetButton = document.getElementById("resetButton");
 
-    var tempoOperacao = 0;
+    var tempoOperacao = parseInt(localStorage.getItem('tempoOperacao')) || 0;
     var operationInterval;
 
     // Gráfico de Área
@@ -197,8 +197,14 @@ document.addEventListener('DOMContentLoaded', (event) => {
         }
     });
 
+   function salvarTempoOperacao() {
+        localStorage.setItem('tempoOperacao', tempoOperacao.toString()); // Salva o tempo de operação no armazenamento local
+    }
+
+    // Atualiza o contador da operação
     function atualizarTempoOperacao() {
         tempoOperacao++;
+        salvarTempoOperacao(); // Salva o tempo atualizado no armazenamento local
         var horas = Math.floor(tempoOperacao / 3600);
         var minutos = Math.floor((tempoOperacao % 3600) / 60);
         var segundos = tempoOperacao % 60;
@@ -208,6 +214,18 @@ document.addEventListener('DOMContentLoaded', (event) => {
             (segundos < 10 ? '0' : '') + segundos;
     }
 
+    // Restaura o tempo de operação salvo ao carregar a página
+    function restaurarTempoOperacao() {
+        var savedTime = localStorage.getItem('tempoOperacao');
+        if (savedTime !== null) {
+            tempoOperacao = parseInt(savedTime);
+            atualizarTempoOperacao();
+        }
+    }
+
+    // Chama a função para restaurar o tempo de operação ao carregar a página
+    restaurarTempoOperacao();
+    
     function alternarStatusMaquina() {
         if (textoStatus.textContent === "Máquina Desligada") {
             textoStatus.textContent = "Máquina Ligada";
