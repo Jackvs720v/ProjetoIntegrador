@@ -1,0 +1,495 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+:root {
+    /* ===== Colors ===== */
+    --body-color: #E4E9F7;
+    --sidebar-color: #FFF;
+    --primary-color: #695CFE;
+    --primary-color-light: #F6F5FF;
+    --toggle-color: #DDD;
+    --text-color: #707070;
+
+    /* ====== Transition ====== */
+    --tran-03: all 0.3s ease;
+    --tran-04: all 0.3s ease;
+    --tran-05: all 0.3s ease;
+    --chart-padding: 20px;
+}
+
+body {
+    min-height: 100vh;
+    background-color: var(--body-color);
+    transition: var(--tran-05);
+}
+
+::selection {
+    background-color: var(--primary-color);
+    color: #fff;
+}
+
+body.dark {
+    --body-color: #18191a;
+    --sidebar-color: #242526;
+    --primary-color: #3a3b3c;
+    --primary-color-light: #3a3b3c;
+    --toggle-color: #fff;
+    --text-color: #ccc;
+}
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 250px;
+    padding: 10px 14px;
+    background: var(--sidebar-color);
+    transition: var(--tran-05);
+    z-index: 100;
+}
+
+.sidebar.close {
+    width: 88px;
+}
+
+.sidebar li {
+    height: 50px;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.sidebar header .image,
+.sidebar .icon {
+    min-width: 60px;
+    border-radius: 6px;
+}
+
+.sidebar .icon {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+}
+
+.sidebar .text,
+.sidebar .icon {
+    color: var(--text-color);
+    transition: var(--tran-03);
+}
+
+.sidebar .text {
+    font-size: 17px;
+    font-weight: 500;
+    white-space: nowrap;
+    opacity: 1;
+}
+
+.sidebar.close .text {
+    opacity: 0;
+}
+
+.sidebar header {
+    position: relative;
+}
+
+.sidebar header .image-text {
+    display: flex;
+    align-items: center;
+}
+
+.sidebar header .logo-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar header .image img {
+    width: 40px;
+    border-radius: 6px;
+}
+
+.sidebar header .toggle {
+    position: absolute;
+    top: 50%;
+    right: -25px;
+    transform: translateY(-50%) rotate(180deg);
+    height: 25px;
+    width: 25px;
+    background-color: var(--primary-color);
+    color: var(--sidebar-color);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    cursor: pointer;
+    transition: var(--tran-05);
+}
+
+body.dark .sidebar header .toggle {
+    color: var(--text-color);
+}
+
+.sidebar.close .toggle {
+    transform: translateY(-50%) rotate(0deg);
+}
+
+.sidebar .menu {
+    margin-top: 40px;
+}
+
+.sidebar li a {
+    list-style: none;
+    height: 100%;
+    background: transparent;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: var(--tran-03);
+}
+
+.sidebar li a:hover {
+    background-color: var(--primary-color);
+}
+
+.sidebar li a:hover .icon,
+.sidebar li a:hover .text {
+    color: var(--sidebar-color);
+}
+
+body.dark .sidebar li a:hover .icon,
+body.dark .sidebar li a:hover .text {
+    color: var(--text-color);
+}
+
+.sidebar .menu-bar {
+    height: calc(100% - 55px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow-y: scroll;
+}
+
+.menu-bar::-webkit-scrollbar {
+    display: none;
+}
+
+.sidebar .menu-bar .mode {
+    border-radius: 6px;
+    background: var(--primary-color-light);
+    position: relative;
+    transition: var(--tran-05);
+}
+
+.menu-bar .mode .sun-moon {
+    height: 50px;
+    width: 60px;
+}
+
+.mode .sun-moon i {
+    position: absolute;
+}
+
+.sun-moon i.sun {
+    opacity: 0;
+}
+
+body.dark .mode .sun-moon i.sun {
+    opacity: 1;
+}
+
+body.dark .mode .sun-moon i.moon {
+    opacity: 0;
+}
+
+.sidebar .menu-bar .bottom-content .toggle-switch {
+    position: absolute;
+    right: 0;
+    height: 100%;
+    min-width: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.toggle-switch .switch {
+    position: relative;
+    height: 22px;
+    width: 40px;
+    border-radius: 25px;
+    background-color: var(--toggle-color);
+    transition: var(--tran-05);
+}
+
+.switch::before {
+    content: '';
+    position: absolute;
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    background: var(--sidebar-color);
+    transition: var(--tran-04);
+}
+
+body.dark .switch::before {
+    left: 20px;
+}
+
+.home {
+    position: relative;
+    height: 100vh;
+    left: 250px;
+    width: calc(100% - 250px);
+    transition: var(--tran-05);
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.sidebar.close ~ .home {
+    left: 78px;
+    height: 100vh;
+    width: calc(100% - 78px);
+}
+
+.home .text {
+    font-size: 30px;
+    font-weight: 500;
+    color: var(--text-color);
+    padding: 12px 60px;
+}
+
+.home .content {
+    padding: 20px;
+    background-color: var(--primary-color-light);
+    border-radius: 8px;
+}
+
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 0 60px;
+}
+
+.card {
+    background: var(--primary-color);
+    color: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex: 1 1 calc(25% - 20px);
+    margin: 10px;
+    transition: background 0.3s ease;
+}
+
+.card.ligada {
+    background-color: #a6f1a6;
+}
+
+.card.desligada {
+    background-color: #f1a6a6;
+}
+
+.card-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.card-content .number {
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.card-content .card-name {
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.icon-box {
+    font-size: 32px;
+}
+
+#chart-graphics {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
+}
+
+.chart-container {
+    flex: 1 1 calc(33.333% - 20px);
+    background: hsl(245, 99%, 68%, 0.6);
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: padding 0.3s ease;
+}
+
+.chart-container h2 {
+    margin-bottom: 10px;
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--text-color);
+}
+
+canvas {
+    width: 100% !important;
+    height: auto !important;
+}
+
+@media (max-width: 1200px) {
+    .chart-container {
+        flex: 1 1 calc(50% - 20px);
+    }
+}
+
+@media (max-width: 768px) {
+    .chart-container {
+        flex: 1 1 100%;
+        padding: 10px;
+    }
+}
+
+.card.ligada .icon-box i {
+    color: #2ecc71; /* Cor do ícone quando a máquina está ligada */
+}
+
+.card.desligada .icon-box i {
+    color: #e74c3c; /* Cor do ícone quando a máquina está desligada */
+}
+
+/* Importação dos ícones do Boxicons */
+.icon-box i.bx-user {
+    font-size: 32px;
+}
+
+.cards{
+    cursor: pointer;
+}
+
+#resetButton {
+    background-color: #007bff; /* Azul primário */
+    color: white; /* Cor do texto */
+    padding: 10px 20px; /* Ajuste o tamanho */
+    border: none; /* Remover borda */
+    border-radius: 5px; /* Arredondar cantos */
+    font-size: 1rem; /* Tamanho da fonte */
+    cursor: pointer; /* Mão como cursor ao passar o mouse */
+    transition: background-color 0.3s; /* Transição para o efeito ao passar o mouse */
+}
+
+#resetButton:hover {
+    background-color: #0056b3; /* Azul mais escuro ao passar o mouse */
+}
+main{
+    height: 10vh;
+}
+/*Footer Dashboard*/
+.footer {
+    background: #333;
+    color: #ddd;
+    padding: 10px 0;  /* Reduzido o padding para diminuir o tamanho do fundo */
+    text-align: center;
+}
+
+.footer .footer-content {
+    display: flex;
+    justify-content: space-around;
+    padding: 0 20px;
+    flex-wrap: wrap;
+    align-items: flex-start;
+}
+
+.footer .footer-section {
+    flex: 1;
+    padding: 10px;  /* Reduzido o padding interno das seções do footer */
+    min-width: 250px;
+    text-align: center;  /* Centraliza o conteúdo da seção */
+}
+
+.footer .footer-section h2 {
+    margin-bottom: 10px;  /* Reduzido o espaço inferior do título */
+    font-size: 18px;
+    font-weight: 500;
+    color: #fff;
+    text-align: center;  /* Centraliza o título */
+}
+
+.footer .footer-section ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;  /* Centraliza os ícones */
+    gap: 10px;  /* Espaçamento entre os ícones */
+}
+
+.footer .footer-section ul li {
+    margin-bottom: 5px;  /* Reduzido o espaço entre os itens da lista */
+}
+
+.footer .footer-section ul li a {
+    color: #ddd;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer .footer-section ul li a:hover {
+    color: #fff;
+}
+
+.footer .footer-section .contact-item {
+    margin-bottom: 5px;  /* Reduzido o espaço entre os itens de contato */
+    display: flex;
+    align-items: center;
+    justify-content: center;  /* Centraliza os itens de contato */
+}
+
+.footer .footer-section .contact-item span {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.footer .footer-bottom {
+    background: #222;
+    color: #bbb;
+    padding: 10px 0;
+    font-size: 14px;
+}
+
+.footer .logo-text {
+    font-size: 24px;
+    font-weight: bold;
+    color: #fff;
+}
+
+.footer .logo-text span {
+    color: var(--primary-color);
+}
+
+.footer .footer-section p {
+    color: #ccc;
+    text-align: center;  /* Centraliza o texto do parágrafo */
+}
+
+.footer .footer-section .contact-item i {
+    font-size: 18px;
+    color: var(--text-color);
+}

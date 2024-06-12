@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/_css/dashboard.css">
+
+    <!-- Boxicons CSS -->
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+
+    <title>Dashboard Sidebar Menu</title>
+</head>
+
+<body>
+    <nav class="sidebar close">
+        <header>
+            <div class="image-text">
+                <div class="image">
+                    <img src="/_img/menu.png" alt="">
+                </div>
+                <div class="text logo-text">
+                    <span class="name">Codinglab</span>
+                    <span class="profession">Web developer</span>
+                </div>
+            </div>
+            <i class='bx bx-chevron-right toggle'></i>
+        </header>
+        <div class="menu-bar">
+            <div class="menu">
+                <ul class="menu-links">
+                    <li class="nav-link">
+                        <a href="/_html/index.html">
+                            <i class='bx bxs-home icon'></i>
+                            <span class="text nav-text">Home</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-link">
+                        <a href="/_html/dashboard.html">
+                            <i class='bx bxs-dashboard icon'></i>
+                            <span class="text nav-text">Dashboard</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-link">
+                        <a href="/_html/informacao.html">
+                            <i class='bx bxs-info-square icon'></i>
+                            <span class="text nav-text">Informações</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-link">
+                        <a href="/_html/equipe.html">
+                            <i class='bx bx-group icon'></i>
+                            <span class="text nav-text">Equipe</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="bottom-content">
+                <li class="mode">
+                    <div class="sun-moon">
+                        <i class='bx bx-moon icon moon'></i>
+                        <i class='bx bx-sun icon sun'></i>
+                    </div>
+                    <span class="mode-text text">Dark mode</span>
+
+                    <div class="toggle-switch">
+                        <span class="switch"></span>
+                    </div>
+
+                </li>
+            </div>
+        </div>
+    </nav>
+    <section class="home">
+        <div class="text">Dashboard</div>
+        <div class="cards">
+            <div class="card" id="machineCard" onclick="toggleMachineStatus()">
+                <div class="card-content">
+                    <div class="card-name" id="statusText">Máquina Desligada</div>
+                </div>
+                <div class="icon-box" id="statusIcon">
+                    <i id="icon" class='bx bx-power-off'></i>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-content">
+                    <div class="number" id="totalPecas">0</div>
+                    <div class="card-name">Peças Totais</div>
+                </div>
+                <div class="icon-box">
+                    <i class='bx bx-package'></i>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-content">
+                    <div class="number" id="operacaoTempo">00:00:00</div>
+                    <div class="card-name">Tempo de Operação</div>
+                    <button id="resetButton">Reset</button>
+                </div>
+                <div class="icon-box">
+                    <i class='bx bx-time'></i>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-content">
+                <div class="number" id="lotesTotais">0</div>
+                <div class="card-name">Peças Totais nos lotes</div>
+            </div>
+                <div class="icon-box">
+                    <i class='bx bx-package'></i>
+                </div>
+            </div>
+        </div>
+        <div id="chart-graphics">
+            <div class="chart-container">
+                <h2>Lotes</h2>
+                <canvas id="areaChart"></canvas>
+            </div>
+            <div class="chart-container">
+                <h2>Quantidade de Peça </h2>
+                <canvas id="chartBar"></canvas>
+            </div>
+            <div class="chart-container">
+                <h2>Início e Fim do Processo</h2>
+                <canvas id="myChart"></canvas>
+            </div>
+        </div>
+        <main></main>
+        <footer class="footer">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h1 class="logo-text"><span>Coding</span>lab</h1>
+                    <p>
+                        Codinglab é um blog para amantes de tecnologia, onde é possível ver a resolução de situações problemas.
+                    </p>
+                </div>
+                <div class="footer-section">
+                    <h2>Redes Sociais</h2>
+                    <br>
+                    <ul>
+                        <li><a href="https://facebook.com" target="_blank"><i class='bx bxl-facebook'></i></a></li>
+                        <li><a href="https://twitter.com" target="_blank"><i class='bx bxl-twitter'></i></a></li>
+                        <li><a href="https://instagram.com" target="_blank"><i class='bx bxl-instagram'></i></a></li>
+                        <li><a href="https://linkedin.com" target="_blank"><i class='bx bxl-linkedin'></i></a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h2>Contate-nos</h2>
+                    <br>
+                    <div class="contact-item">
+                        <span><i class='bx bx-phone'></i></span>
+                        <span>(123) 456-7890</span>
+                    </div>
+                    <div class="contact-item">
+                        <span><i class='bx bx-envelope'></i></span>
+                        <span>info@codinglab.com</span>
+                    </div>
+                    <div class="contact-item">
+                        <span><i class='bx bx-map'></i></span>
+                        <span>Rua Pastor Cicero Canuto de Lima, 71 São Bernardo - Vila Rialto, Campinas - SP, 13036-210y</span>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                &copy; 2024 Codinglab | Designed by Codinglab
+            </div>
+        </footer>
+    </section>
+
+    <script src="/_js/dashboard.js"></script>
+    <script src="/_js/darkLight.js"></script>
+</body>
+
+</html>

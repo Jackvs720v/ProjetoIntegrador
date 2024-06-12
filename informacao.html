@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- ======== CSS ======== -->
+    <link rel="stylesheet" href="/_css/style.css">
+
+
+    <!-- ===== Boxicons CSS ===== -->
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+
+    <title>Home</title>
+</head>
+
+<body>
+    <nav class="sidebar close">
+        <header>
+            <div class="image-text">
+                <div class="image">
+                    <img src="/_img/menu.png" alt="">
+                </div>
+                <div class="text logo-text">
+                    <span class="name">Codinglab</span>
+                    <span class="profession">Web developer</span>
+                </div>
+            </div>
+            <i class='bx bx-chevron-right toggle'></i>
+        </header>
+        <div class="menu-bar">
+            <div class="menu">
+                <ul class="menu-links">
+                    <li class="nav-link">
+                        <a href="/_html/index.html">
+                            <i class='bx bxs-home icon'></i>
+                            <span class="text nav-text">Home</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-link">
+                        <a href="/_html/dashboard.html">
+                            <i class='bx bxs-dashboard icon'></i>
+                            <span class="text nav-text">Dashboard</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-link">
+                        <a href="/_html/informacao.html">
+                            <i class='bx bxs-info-square icon'></i>
+                            <span class="text nav-text">Informações</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-link">
+                        <a href="/_html/equipe.html">
+                            <i class='bx bx-group icon'></i>
+                            <span class="text nav-text">Equipe</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="bottom-content">
+                <li class="mode">
+                    <div class="sun-moon">
+                        <i class='bx bx-moon icon moon'></i>
+                        <i class='bx bx-sun icon sun'></i>
+                    </div>
+                    <span class="mode-text text">Dark mode</span>
+
+                    <div class="toggle-switch">
+                        <span class="switch"></span>
+                    </div>
+                </li>
+            </div>
+        </div>
+    </nav>
+
+    <section class="home">
+        <div class="text">Informações</div>
+        <div class="content">
+            <strong>Detalhes do Sistema Integrado de Monitoramento e Otimização da Produção Industrial (SIMOPI)</strong>
+            <p>O SIMOPI é uma iniciativa voltada para a automação e análise de dados na produção industrial, visando otimizar e controlar os processos de manufatura de forma eficaz. Ele permite a colaboração interdisciplinar entre múltiplas disciplinas acadêmicas para a implementação e acompanhamento dos sistemas.</p>
+
+            <strong>Situação-Problema:</strong>
+            <p>A empresa Automation Mange, 
+                desenvolvedora de soluções de automação para máquinas e 
+                equipamentos, procurou a colaboração de especialistas
+                para realizar a automação de uma esteira controlada 
+                por um CLP/IHM e um Inversor de Frequência. 
+                Isso envolveu a especificação do hardware, 
+                interpretação dos diagramas elétricos,
+                configuração do CLP e comissionamento do sistema.</p>
+
+            <strong>Funcionamento do Sistema:</strong>
+            <ul>
+                <li> Ao pressionar o botão liga, acende a lâmpada L1 (verde), indicando que o sistema está
+                     em funcionamento e o motor da esteira é acionado.</li>
+                <li> A peça é detectada pelo sensor S1 e um comando para parar a esteira é dado até que o 
+                    tamanho da peça seja identificado pelos sensores S2, S3 ou S4.</li>
+                <li>Identificado o tamanho da peça, a esteira volta a movimentar para que a 
+                    separação seja feita por cilindros separadores de peças.</li>
+                <li>Após a separação, um sinal de confirmação é gerado através dos sensores na entrada de cada baia (S5, S6 ou S7). Somente então outro ciclo de separação pode ser iniciado.</li>
+            </ul>
+
+            <strong>Como Funciona?</strong>
+            <ul>
+                <li><strong>Sensores e Atuadores:</strong> Sensores captam informações do ambiente (por exemplo,
+                    temperatura, pressão, movimento). Atuadores executam ações com base nos dados dos sensores (por
+                    exemplo, ligar ou desligar uma máquina).</li>
+                <li><strong>Controladores Lógicos Programáveis (CLPs):</strong> São os "cérebros" das máquinas,
+                    processando informações e tomando decisões. Programamos os CLPs para controlar as operações das
+                    máquinas.</li>
+                <li><strong>Redes de Comunicação:</strong> Os dispositivos se comunicam entre si por meio de redes, como
+                    a Internet das Coisas (IoT).</li>
+            </ul>
+
+            <strong>Impacto nas Empresas</strong>
+            <p>Eficiência: Processos mais rápidos e precisos significam maior eficiência.</p>
+            <p>Competitividade: Empresas automatizadas têm vantagem no mercado global.</p>
+            <p>Sustentabilidade: Menos desperdício e menor impacto ambiental.</p>
+            <p>Em resumo, a automação industrial é uma revolução silenciosa que está transformando a maneira como
+                produzimos bens. Como estudante, você tem a oportunidade de explorar esse campo e contribuir para um
+                futuro mais inteligente e eficiente na indústria.</p>
+        </div>
+        <main></main>
+        <footer class="footer">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h1 class="logo-text"><span>Coding</span>lab</h1>
+                    <p>
+                        Codinglab é um blog para amantes de tecnologia, onde é possível ver a resolução de situações problemas.
+                    </p>
+                </div>
+                <div class="footer-section">
+                    <h2>Redes Sociais</h2>
+                    <br>
+                    <ul>
+                        <li><a href="https://facebook.com" target="_blank"><i class='bx bxl-facebook'></i></a></li>
+                        <li><a href="https://twitter.com" target="_blank"><i class='bx bxl-twitter'></i></a></li>
+                        <li><a href="https://instagram.com" target="_blank"><i class='bx bxl-instagram'></i></a></li>
+                        <li><a href="https://linkedin.com" target="_blank"><i class='bx bxl-linkedin'></i></a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h2>Contate-nos</h2>
+                    <br>
+                    <div class="contact-item">
+                        <span><i class='bx bx-phone'></i></span>
+                        <span>(123) 456-7890</span>
+                    </div>
+                    <div class="contact-item">
+                        <span><i class='bx bx-envelope'></i></span>
+                        <span>info@codinglab.com</span>
+                    </div>
+                    <div class="contact-item">
+                        <span><i class='bx bx-map'></i></span>
+                        <span>123 Coding Street, Tech City</span>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                &copy; 2024 Codinglab | Designed by Codinglab
+            </div>
+        </footer>        
+    </section>
+    <script src="/_js/darkLight.js"></script>
+</body>
+
+</html>
