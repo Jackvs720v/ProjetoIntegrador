@@ -336,7 +336,7 @@ body.dark .switch::before {
 
 .chart-container {
     flex: 1 1 calc(33.333% - 20px);
-    background: hsl(245, 99%, 68%, 0.6);
+    background: white;
     border-radius: 8px;
     padding: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
