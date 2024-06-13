@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
         data: {
             labels: ['Lote 1', 'Lote 2', 'Lote 3'],
             datasets: [{
-                label: 'Quantidade de Peça dos lotes',
+                label: 'Quantidade de Peça',
                 data: [65, 59, 80],
                 backgroundColor: [
                     'rgba(54, 162, 235, 0.6)', // Melhorando a cor de destaque
@@ -56,7 +56,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
         data: {
             labels: ['Pequena', 'Média', 'Grande'],
             datasets: [{
-                label: 'Peças por Dia',
+                label: 'Quantidade de Peças',
                 data: [31, 8, 5],
                 backgroundColor: [
                     'rgba(255, 99, 132, 0.6)', // Melhorando a cor de destaque
@@ -121,9 +121,9 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
     // Monitorar mudanças nos dados do gráfico e atualizar o card
     areaChart.update();
-
-     var datas_inicio = ["2023-06-10 08:00:00", "2023-06-10 11:00:00", "2023-06-10 23:00:00"];
-     var datas_fim = ["2023-06-10T12:00:00", "2023-06-11T13:00:00", "2023-06-12T14:00:00"];
+    
+    var datas_inicio = ["2023-06-10 08:00:00", "2023-06-10 11:00:00", "2023-06-10 23:00:00"];
+    var datas_fim = ["2023-06-10T12:00:00", "2023-06-11T13:00:00", "2023-06-12T14:00:00"];
 
     // Função para converter strings de data para objetos Moment.js
     function converterParaMoment(data) {
