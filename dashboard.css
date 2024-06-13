@@ -114,6 +114,22 @@ body.dark {
     width: 40px;
     border-radius: 6px;
 }
+header .image-text .profession {
+    font-size: 16px;
+    margin-top: -2px;
+    display: block;
+}
+
+.sidebar header .image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sidebar header .image img {
+    width: 40px;
+    border-radius: 6px;
+}
 
 .sidebar header .toggle {
     position: absolute;
@@ -336,7 +352,7 @@ body.dark .switch::before {
 
 .chart-container {
     flex: 1 1 calc(33.333% - 20px);
-    background: #ffffff;
+    background: hsl(245, 99%, 68%, 0.6);
     border-radius: 8px;
     padding: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
