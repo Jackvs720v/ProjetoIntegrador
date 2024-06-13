@@ -151,7 +151,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
                 label: 'Processo',
                 data: Array.from({ length: datas_inicio.length }, (_, i) => i),
                 borderColor: 'black', // Cor de destaque mais suave
-                backgroundColor: 'transparent',
+                backgroundColor: '#ffffff',
                 pointRadius: 6,
                 pointHoverRadius: 8
             }]
