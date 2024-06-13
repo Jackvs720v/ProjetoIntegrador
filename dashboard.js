@@ -122,25 +122,31 @@ document.addEventListener('DOMContentLoaded', (event) => {
     // Monitorar mudanças nos dados do gráfico e atualizar o card
     areaChart.update();
 
-    var datas_inicio = ["2024-05-01 08:00:00"];
-    var datas_fim = ["2024-05-01 23:00:00"];
+     var datas_inicio = ["2023-06-10 08:00:00", "2023-06-10 11:00:00", "2023-06-10 23:00:00"];
+     var datas_fim = ["2023-06-10T12:00:00", "2023-06-11T13:00:00", "2023-06-12T14:00:00"];
 
-    // Função para converter as strings de data para objetos Moment.js
-    function converterParaMoment(dataHoraString) {
-        return moment(dataHoraString, "YYYY-MM-DD HH:mm:ss").format("DD/MM/YYYY HH:mm:ss");
+    // Função para converter strings de data para objetos Moment.js
+    function converterParaMoment(data) {
+        return moment(data);
     }
 
     // Convertendo as strings de data para objetos Moment.js
-    var datasFormatadas = datas_inicio.map(function (data_inicio, index) {
-        return converterParaMoment(data_inicio) + ' - ' + converterParaMoment(datas_fim[index]);
-    });
+    var datasFormatadasI = datas_inicio.map(converterParaMoment);
+    var datasFormatadasF = datas_fim.map(converterParaMoment);
+
+    // Dados para o gráfico
+    var dataPoints = datasFormatadasI.map((dataI, index) => ({
+        x: dataI,
+        y: datasFormatadasF[index]
+    }));
+
 
     // Gráfico de Linhas
     var ctx3 = document.getElementById('myChart').getContext('2d');
     var myChart = new Chart(ctx3, {
         type: 'line',
         data: {
-            labels: datasFormatadas,
+            labels: datasFormatadasI.map(date => date.format('DD/MM/YYYY HH:mm:ss')),
             datasets: [{
                 label: 'Processo',
                 data: Array.from({ length: datas_inicio.length }, (_, i) => i),
