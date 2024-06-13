@@ -309,7 +309,7 @@ body.dark .home .content {
 }
 
 main{
-    height: 60vh;
+    height: 10vh;
 }
 
 /*Footer Home e Informação*/
@@ -402,4 +402,11 @@ main{
 .footer .footer-section .contact-item i {
     font-size: 18px;
     color: var(--text-color);
+}
+img{
+    display: flex;
+    margin-left: auto;
+    justify-content: center;
+    margin-right: auto;
+    margin-top: 45px;
 }
