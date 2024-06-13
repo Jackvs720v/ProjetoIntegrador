@@ -56,7 +56,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
         data: {
             labels: ['Pequena', 'Média', 'Grande'],
             datasets: [{
-                label: 'Quantidade de Peças por Dia',
+                label: 'Peças por Dia',
                 data: [31, 8, 5],
                 backgroundColor: [
                     'rgba(255, 99, 132, 0.6)', // Melhorando a cor de destaque
