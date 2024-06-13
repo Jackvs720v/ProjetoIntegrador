@@ -122,8 +122,8 @@ document.addEventListener('DOMContentLoaded', (event) => {
     // Monitorar mudanças nos dados do gráfico e atualizar o card
     areaChart.update();
 
-    var datas_inicio = ["2024-05-01 08:00:00", "2024-05-01 09:30:00"];
-    var datas_fim = ["2024-05-01 09:30:00", "2024-05-01 13:00:00"];
+    var datas_inicio = ["2024-05-01 08:00:00"];
+    var datas_fim = ["2024-05-01 23:00:00"];
 
     // Função para converter as strings de data para objetos Moment.js
     function converterParaMoment(dataHoraString) {
