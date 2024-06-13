@@ -403,7 +403,7 @@ main{
     font-size: 18px;
     color: var(--text-color);
 }
-img{
+.simopi{
     display: flex;
     margin-left: auto;
     justify-content: center;
